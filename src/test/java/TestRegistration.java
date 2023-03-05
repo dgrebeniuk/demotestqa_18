@@ -27,12 +27,13 @@ public class TestRegistration {
       $(".custom-radio:nth-child(1) > .custom-control-label").click(); //Gender
       $("#userNumber").setValue("9313859692"); //Mobile
       $("#dateOfBirthInput").setValue("05 Mar 2000"); //Date of Birth
-      $("[class=css-12jo7m5 subjects-auto-complete__multi-value__label]").selectRadio("Hindi"); //Subjects
+      $("[id=subjectsContainer]").click(); //Subjects
+      $("#react-select-2-option-0").click();
       $(".custom-checkbox:nth-child(1) > .custom-control-label").click(); //Hobbies
       $("#uploadPicture").sendKeys("/Users/dmitrijgrebenyuk/Documents/Difrent format files/test.png"); //Picture
       $("#currentAddress").setValue("Tbilisi"); //Current Address
-      $("#dateOfBirthInput").selectRadio("Hindi"); //State
-      $("#dateOfBirthInput").selectRadio("Hindi"); //City
+      //$("#dateOfBirthInput").selectRadio("Hindi"); //State
+     // $("#dateOfBirthInput").selectRadio("Hindi"); //City
 
 
       $("#submit").click(); //Click on the button
