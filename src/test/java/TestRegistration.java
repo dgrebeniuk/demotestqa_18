@@ -1,14 +1,11 @@
 import com.codeborne.selenide.Configuration;
-import com.codeborne.selenide.Selenide;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Selectors.byName;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
-import static com.codeborne.selenide.files.DownloadActions.click;
-import static java.awt.SystemColor.control;
+
 
 public class TestRegistration {
 
@@ -23,8 +20,8 @@ public class TestRegistration {
 
       open("https://demoqa.com/automation-practice-form");
 
-      Selenide.executeJavaScript("$('#fixedban').remove()");
-      Selenide.executeJavaScript("$('footer').remove()");
+      executeJavaScript("$('#fixedban').remove()");
+      executeJavaScript("$('footer').remove()");
 
       $("#firstName").setValue("Maxim"); //Name
       $("#lastName").setValue("Evdokimov"); //Last name
@@ -40,7 +37,7 @@ public class TestRegistration {
 
       $("#hobbiesWrapper").$(byText("Sports")).click(); //Hobbies
 
-      $("#uploadPicture").sendKeys("/Users/dmitrijgrebenyuk/Documents/Difrent format files/test.png"); //Picture
+      $("#uploadPicture").sendKeys("/Users/dmitrijgrebenyuk/Documents/javatest/demotestqa_18/src/test/resources/test.png"); //Picture
 
       $("#currentAddress").setValue("Tbilisi"); //Current Address
 
@@ -51,7 +48,7 @@ public class TestRegistration {
       $("#city").$(byText("Delhi")).click();
 
       $("#submit").click(); //Click on the button
-      
+
 
       $(".table-responsive").shouldHave(text("Maxim"), //Check up test
               text("Evdokimov"),
@@ -63,10 +60,5 @@ public class TestRegistration {
               text("test.png"),
               text("Tbilisi"),
               text("NCR Delhi"));
-
-
-
-
-
    }
 }
