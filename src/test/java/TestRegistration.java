@@ -37,7 +37,7 @@ public class TestRegistration {
 
       $("#hobbiesWrapper").$(byText("Sports")).click(); //Hobbies
 
-      $("#uploadPicture").sendKeys("/Users/dmitrijgrebenyuk/Documents/javatest/demotestqa_18/src/test/resources/test.png"); //Picture
+      $("#uploadPicture").sendKeys("src/test/resources/test.png"); //Picture
 
       $("#currentAddress").setValue("Tbilisi"); //Current Address
 
