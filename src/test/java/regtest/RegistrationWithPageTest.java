@@ -4,7 +4,7 @@ package regtest;
 import org.junit.jupiter.api.Test;
 
 
-public class TestRegistrationWithPage extends TestBasic {
+public class RegistrationWithPageTest extends TestBase {
 
    @Test
    void registrationFrom() {
@@ -14,12 +14,12 @@ public class TestRegistrationWithPage extends TestBasic {
               .setFirstName("Maxim")
               .setLastName("Evdokimov")
               .setUserEmail("evdokimov@gmail.com")
-              .setGender()
+              .setGender("Male")
               .setPhone("9313859692")
               .setDateBirth()
               .setSubject("Maths")
               .setHobbies("Sports")
-              .uploadPicture()
+              .uploadPicture("src/test/resources/test.png")
               .setAddress("Tbilisi")
               .setState("NCR")
               .setCity("Delhi")

@@ -9,12 +9,11 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
 public class RegistrationPage {
-   File file = new File("src/test/resources/test.png");
    private SelenideElement
            firstNameInput = $("#firstName"),
            lastNameInput = $("#lastName"),
            emailInput = $("#userEmail"),
-           genderInput = $(".custom-radio:nth-child(1) > .custom-control-label"),
+           genderInput = $("#genterWrapper"),
            userNumberInput = $("#userNumber"),
            dateBirthInput = $("#dateOfBirthInput"),
            dateInput = $(".react-datepicker__week > .react-datepicker__day--030"),
@@ -54,8 +53,8 @@ public class RegistrationPage {
       return this;
    }
 
-   public RegistrationPage setGender() {
-      genderInput.click();
+   public RegistrationPage setGender(String value) {
+      genderInput.$(byText(value)).click();
 
       return this;
    }
@@ -86,8 +85,8 @@ public class RegistrationPage {
       return this;
    }
 
-   public RegistrationPage uploadPicture() {
-      pictureUploadInput.uploadFile(file);
+   public RegistrationPage uploadPicture(String value) {
+      pictureUploadInput.uploadFromClasspath(value);
 
       return this;
    }
