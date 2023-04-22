@@ -1,4 +1,4 @@
-package regtest;
+package tests;
 
 
 import org.junit.jupiter.api.Test;
@@ -16,7 +16,7 @@ public class RegistrationWithPageTest extends TestBase {
               .setUserEmail("evdokimov@gmail.com")
               .setGender("Male")
               .setPhone("9313859692")
-              .setDateBirth()
+              .setDateBirth("30", "March", "2023")
               .setSubject("Maths")
               .setHobbies("Sports")
               .uploadPicture("src/test/resources/test.png")

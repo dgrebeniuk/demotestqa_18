@@ -1,4 +1,4 @@
-package regtest;
+package tests;
 
 import Pages.RegistrationPage;
 import com.codeborne.selenide.Configuration;

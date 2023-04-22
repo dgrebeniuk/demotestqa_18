@@ -1,5 +1,6 @@
 package Pages;
 
+import Pages.components.CalendarComponent;
 import com.codeborne.selenide.SelenideElement;
 
 import java.io.File;
@@ -65,9 +66,9 @@ public class RegistrationPage {
       return this;
    }
 
-   public RegistrationPage setDateBirth() {
+   public RegistrationPage setDateBirth(String day, String month, String year) {
       dateBirthInput.click();
-      dateInput.click();
+      CalendarComponent.setDate(day, month, year);
 
       return this;
    }
