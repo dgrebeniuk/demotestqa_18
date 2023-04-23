@@ -4,23 +4,19 @@ import Pages.components.CalendarComponent;
 import Pages.components.RegistrationResultsModal;
 import com.codeborne.selenide.SelenideElement;
 
-import java.io.File;
-
-import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
 public class RegistrationPage {
    CalendarComponent calendarComponent = new CalendarComponent();
    RegistrationResultsModal registrationResultsModal = new RegistrationResultsModal();
-   private SelenideElement
+   private final SelenideElement
            firstNameInput = $("#firstName"),
            lastNameInput = $("#lastName"),
            emailInput = $("#userEmail"),
            genderInput = $("#genterWrapper"),
            userNumberInput = $("#userNumber"),
            dateBirthInput = $("#dateOfBirthInput"),
-           dateInput = $(".react-datepicker__week > .react-datepicker__day--030"),
            subjectInput = $("#subjectsInput"),
            subjectChoseInput = $("#subjectsWrapper .subjects-auto-complete__option"),
            hobbiesInput = $("#hobbiesWrapper"),
@@ -115,10 +111,8 @@ public class RegistrationPage {
       return this;
    }
 
-   public RegistrationPage setSubmitButton() {
+   public void setSubmitButton() {
       submitButton.click();
-
-      return this;
    }
 
    public RegistrationPage verifyResult(String key, String value) {
