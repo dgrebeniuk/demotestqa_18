@@ -25,15 +25,15 @@ public class RegistrationWithPageTest extends TestBase {
               .setSubmitButton();
 
       registrationPage
-              .verifyResults("Student Name", "Maxim Evdokimov")
-              .verifyResults("Student Email", "evdokimov@gmail.com")
-              .verifyResults("Gender", "Male")
-              .verifyResults("Mobile", "9313859692")
-              .verifyResults("Date of Birth", "30 March,2023")
-              .verifyResults("Subjects", "Maths")
-              .verifyResults("Hobbies", "Sports")
-              .verifyResults("Picture", "img/test.png")
-              .verifyResults("Address", "Tbilisi")
-              .verifyResults("State and City", "NCR Delhi");
+              .verifyResult("Student Name", "Maxim Evdokimov")
+              .verifyResult("Student Email", "evdokimov@gmail.com")
+              .verifyResult("Gender", "Male")
+              .verifyResult("Mobile", "9313859692")
+              .verifyResult("Date of Birth", "30 March,2023")
+              .verifyResult("Subjects", "Maths")
+              .verifyResult("Hobbies", "Sports")
+              .verifyResult("Picture", "test.png")
+              .verifyResult("Address", "Tbilisi")
+              .verifyResult("State and City", "NCR Delhi");
    }
 }
