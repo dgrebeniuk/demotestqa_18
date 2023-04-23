@@ -57,7 +57,7 @@ public class TestRegistration {
               text("9313859692"),
               text("30 March,2023"),
               text("Maths"),
-              text("test.png"),
+              text("img/test.png"),
               text("Tbilisi"),
               text("NCR Delhi"));
    }

@@ -28,8 +28,8 @@ public class RegistrationPage {
            addressInput = $("#currentAddress"),
            stateInput = $("#state"),
            cityInput = $("#city"),
-           submitButton = $("#submit"),
-           popUp = $(".table-responsive");
+           submitButton = $("#submit");
+
 
    public RegistrationPage openPage() {
       open("https://demoqa.com/automation-practice-form");
@@ -123,21 +123,6 @@ public class RegistrationPage {
 
    public RegistrationPage verifyResults(String key, String value) {
       registrationResultsModal.verifyResult(key, value);
-
-      return this;
-   }
-
-   public RegistrationPage verifyData() {
-      popUp.shouldHave(text("Maxim"), //Check up test
-              text("Evdokimov"),
-              text("evdokimov@gmail.com"),
-              text("Male"),
-              text("9313859692"),
-              text("30 March,2023"),
-              text("Maths"),
-              text("test.png"),
-              text("Tbilisi"),
-              text("NCR Delhi"));
 
       return this;
    }

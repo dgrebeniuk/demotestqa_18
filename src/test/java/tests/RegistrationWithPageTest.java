@@ -18,7 +18,7 @@ public class RegistrationWithPageTest extends TestBase {
               .setDateBirth("30", "March", "2023")
               .setSubject("Maths")
               .setHobbies("Sports")
-              .uploadPicture("src/test/resources/test.png")
+              .uploadPicture("img/test.png")
               .setAddress("Tbilisi")
               .setState("NCR")
               .setCity("Delhi")
@@ -32,7 +32,7 @@ public class RegistrationWithPageTest extends TestBase {
               .verifyResults("Date of Birth", "30 March,2023")
               .verifyResults("Subjects", "Maths")
               .verifyResults("Hobbies", "Sports")
-              .verifyResults("Picture", "test.png")
+              .verifyResults("Picture", "img/test.png")
               .verifyResults("Address", "Tbilisi")
               .verifyResults("State and City", "NCR Delhi");
    }
