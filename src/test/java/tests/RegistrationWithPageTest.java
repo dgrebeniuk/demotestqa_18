@@ -9,7 +9,6 @@ public class RegistrationWithPageTest extends TestBase {
    @Test
    void registrationFrom() {
 
-
       registrationPage.openPage()
               .setFirstName("Maxim")
               .setLastName("Evdokimov")
@@ -23,7 +22,18 @@ public class RegistrationWithPageTest extends TestBase {
               .setAddress("Tbilisi")
               .setState("NCR")
               .setCity("Delhi")
-              .setSubmitButton()
-              .verifyData();
+              .setSubmitButton();
+
+      registrationPage
+              .verifyResults("Student Name", "Maxim Evdokimov")
+              .verifyResults("Student Email", "evdokimov@gmail.com")
+              .verifyResults("Gender", "Male")
+              .verifyResults("Mobile", "9313859692")
+              .verifyResults("Date of Birth", "30 March,2023")
+              .verifyResults("Subjects", "Maths")
+              .verifyResults("Hobbies", "Sports")
+              .verifyResults("Picture", "test.png")
+              .verifyResults("Address", "Tbilisi")
+              .verifyResults("State and City", "NCR Delhi");
    }
 }
