@@ -45,12 +45,12 @@ public class RegistrationWithPageTest extends TestBase {
       registrationPage
               .verifyResult("Student Name", firstName + lastName)
               .verifyResult("Student Email", userEmail)
-              .verifyResult("Gender", "Male")
+              .verifyResult("Gender", gender)
               .verifyResult("Mobile", userPhone)
-              .verifyResult("Date of Birth", "30 March,2023")
-              .verifyResult("Subjects", "Maths")
-              .verifyResult("Hobbies", "Sports")
-              .verifyResult("Picture", "test.png")
+              .verifyResult("Date of Birth", dayOfBirth + monthOfBirth + yearOfBirth)
+              .verifyResult("Subjects", subject)
+              .verifyResult("Hobbies", hobbies)
+              .verifyResult("Picture", pictureName)
               .verifyResult("Address", address)
               .verifyResult("State and City", state + city);
    }
