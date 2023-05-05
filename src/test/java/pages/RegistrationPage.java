@@ -18,7 +18,6 @@ public class RegistrationPage {
            userNumberInput = $("#userNumber"),
            dateBirthInput = $("#dateOfBirthInput"),
            subjectInput = $("#subjectsInput"),
-           subjectChoseInput = $("#subjectsWrapper .subjects-auto-complete__option"),
            hobbiesInput = $("#hobbiesWrapper"),
            pictureUploadInput = $("#uploadPicture"),
            addressInput = $("#currentAddress"),
@@ -73,8 +72,7 @@ public class RegistrationPage {
    }
 
    public RegistrationPage setSubject(String value) {
-      subjectInput.sendKeys(value);
-      subjectChoseInput.click();
+      subjectInput.setValue(value).pressEnter();
 
       return this;
    }

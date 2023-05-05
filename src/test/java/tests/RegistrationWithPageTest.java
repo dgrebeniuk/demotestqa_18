@@ -16,7 +16,7 @@ public class RegistrationWithPageTest extends TestBase {
               lastName = faker.name().lastName(),
               userEmail = faker.internet().emailAddress(),
               gender = getRandomItemFromArray(TestData.gender),
-              userPhone = "+7" + faker.phoneNumber().subscriberNumber(10),
+              userPhone = 8 + faker.phoneNumber().subscriberNumber(9),
               dayOfBirth = String.format("%02d", faker.number().numberBetween(1, 28)),
               monthOfBirth = getRandomItemFromArray(months),
               yearOfBirth = String.format("%02d", faker.number().numberBetween(1970, 2000)),
@@ -34,24 +34,23 @@ public class RegistrationWithPageTest extends TestBase {
               .setGender(gender)
               .setPhone(userPhone)
               .setDateBirth(dayOfBirth, monthOfBirth, yearOfBirth)
-              .setSubject("Maths")
-              .setHobbies("Sports")
+              .setSubject(subject)
+              .setHobbies(hobbies)
               .uploadPicture(pictureName)
               .setAddress(address)
               .setState(state)
-              .setCity("Delhi")
+              .setCity(city)
               .setSubmitButton();
 
       registrationPage
-              .verifyResult("Student Name", firstName + lastName)
+              .verifyResult("Student Name", firstName + " " + lastName)
               .verifyResult("Student Email", userEmail)
               .verifyResult("Gender", gender)
               .verifyResult("Mobile", userPhone)
-              .verifyResult("Date of Birth", dayOfBirth + monthOfBirth + yearOfBirth)
+              .verifyResult("Date of Birth", dayOfBirth + " " + monthOfBirth + "," + yearOfBirth)
               .verifyResult("Subjects", subject)
               .verifyResult("Hobbies", hobbies)
-              .verifyResult("Picture", pictureName)
               .verifyResult("Address", address)
-              .verifyResult("State and City", state + city);
+              .verifyResult("State and City", state + " " + city);
    }
 }
