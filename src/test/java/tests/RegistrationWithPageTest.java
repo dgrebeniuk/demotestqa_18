@@ -3,6 +3,9 @@ package tests;
 
 import org.junit.jupiter.api.Test;
 
+import static tests.TestData.months;
+import static utils.RandomMethodsUtils.getRandomItemFromArray;
+
 
 public class RegistrationWithPageTest extends TestBase {
 
@@ -10,19 +13,19 @@ public class RegistrationWithPageTest extends TestBase {
    void registrationFrom() {
 
       String firstName = faker.name().firstName(),
-      String lastName = faker.name().lastName(),
-      String userEmail = faker.internet().emailAddress(),
-      String gender = ,
-      String userPhone = "+7" + faker.phoneNumber().subscriberNumber(10),
-      String dayOfBirth = ,
-      String monthOfBirth = ,
-      String yearOfBirth = ,
-      String subject = ,
-      String hobbies = ,
-      String pictureName = "img/test.png",
-      String address = faker.address().country(),
-      String state = "NCR",
-      String city = faker.address().city();
+              lastName = faker.name().lastName(),
+              userEmail = faker.internet().emailAddress(),
+              gender = getRandomItemFromArray(TestData.gender),
+              userPhone = "+7" + faker.phoneNumber().subscriberNumber(10),
+              dayOfBirth = String.format("%02d", faker.number().numberBetween(1, 28)),
+              monthOfBirth = getRandomItemFromArray(months),
+              yearOfBirth = String.format("%02d", faker.number().numberBetween(1970, 2000)),
+              subject = getRandomItemFromArray(TestData.subjects),
+              hobbies = getRandomItemFromArray(TestData.hobbies),
+              pictureName = "img/test.png",
+              address = faker.address().country(),
+              state = "NCR",
+              city = getRandomItemFromArray(TestData.cities);
 
       registrationPage.openPage()
               .setFirstName(firstName)
